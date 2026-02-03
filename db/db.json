@@ -1,0 +1,96 @@
+{
+  "usuarios": [
+    {
+      "id": "216d",
+      "nombre": "Santiago",
+      "email": "Santiago@gmail.com",
+      "password": "123",
+      "typeUser": "user",
+      "task": []
+    },
+    {
+      "id": "a2b0",
+      "nombre": "ejemplo",
+      "email": "Ejemplo@gmail.com",
+      "password": "123",
+      "typeUser": "admin",
+      "task": []
+    },
+    {
+      "id": "b5e4",
+      "nombre": "yo",
+      "email": "yo@gmail.com",
+      "password": "123",
+      "typeUser": "user",
+      "task": []
+    }
+  ],
+  "task": [
+    {
+      "id": "952c",
+      "name": "asdad",
+      "userName": "Santiago@gmail.com",
+      "idUser": "216d",
+      "category": "Computer",
+      "priority": "Low",
+      "proccess": "Complete",
+      "description": "asdad",
+      "date": "2026-02-02"
+    },
+    {
+      "id": "4da5",
+      "name": "asda",
+      "userName": "ejemplo",
+      "idUser": "a2b0",
+      "category": "Matematicas",
+      "priority": "High",
+      "proccess": "Progress",
+      "description": "s<f",
+      "date": "2026-02-02"
+    },
+    {
+      "id": "cc0e",
+      "name": "asda",
+      "userName": "ejemplo",
+      "idUser": "a2b0",
+      "category": "Matematicas",
+      "priority": "High",
+      "proccess": "Progress",
+      "description": "515",
+      "date": "2026-02-02"
+    },
+    {
+      "id": "8bfd",
+      "name": "asda",
+      "userName": "ejemplo",
+      "idUser": "a2b0",
+      "category": "Matematicas",
+      "priority": "High",
+      "proccess": "Progress",
+      "description": "asdasd",
+      "date": "2026-02-04"
+    },
+    {
+      "id": "aa9d",
+      "name": "asdas",
+      "userName": "ejemplo",
+      "idUser": "a2b0",
+      "category": "Physis",
+      "priority": "High",
+      "proccess": "Progress",
+      "description": "asdad",
+      "date": "2026-02-02"
+    },
+    {
+      "id": "560e",
+      "name": "asdas",
+      "userName": "yo@gmail.com",
+      "idUser": "b5e4",
+      "category": "Matematicas",
+      "priority": "High",
+      "proccess": "Progress",
+      "description": "123",
+      "date": "2026-02-02"
+    }
+  ]
+}

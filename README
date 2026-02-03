@@ -1,0 +1,109 @@
+CRUDZASO 
+
+Project Overview
+
+This project is a web-based TaskBoard management system developed as a frontend application using a simulated API with JSON Server.
+
+It replicates a real-world ordering workflow where:
+
+Users can register, log in, and place orders.
+
+Administrators can manage products and supervise tasks.
+
+The UI and layout are fully defined in Figma and must be followed exactly.
+
+Project Scope
+Included
+
+Simulated authentication
+
+Role-based access control (user / admin)
+
+Fake API consumption with JSON Server
+
+Task management
+
+Admin dashboard with basic metrics
+
+Session persistence
+
+View separation by role
+
+System Roles
+Role Description
+User: Client who creates, updates, and deletes tasks
+Administrator: Manages tasks
+
+Business rule: Users cannot access admin views, and admins do not access user views.
+
+Technologies Used
+
+HTML5
+
+CSS3
+
+Tailwind CSS
+
+JavaScript (Vanilla)
+
+JSON Server
+
+SessionStorage
+
+User Module
+
+User registration (role assigned manual)
+
+Login with credential validation
+
+Task menu and button to create a new task
+
+Users can view only their own task
+
+Logout
+
+Admin Module
+
+Login with role detection
+
+Access to admin dashboard
+
+View metrics: every task
+
+Security and Logic Rules
+
+Protected routes based on session and role
+
+Redirect to login if no active session
+
+Users can only access their own data
+
+Admins have access to all task
+
+UI Design
+
+Responsive layout
+
+Required views:
+
+Login
+
+User task
+
+User Create task
+
+Admin admindashboard
+
+Project Execution (Local)
+
+Install dependencies:
+
+
+
+npm install json-server
+
+Start the fake API:
+
+json-server --watch ./db/db.json 
+
+Open the project with Live Server or a local server.

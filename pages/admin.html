@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <header>
+        <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar"
+            aria-controls="default-sidebar" type="button"
+            class="text-heading bg-transparent box-border border border-transparent hover:bg-neutral-secondary-medium focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded-base ms-3 mt-3 text-sm p-2 focus:outline-none inline-flex sm:hidden">
+            <span class="sr-only">Open sidebar</span>
+            <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h10" />
+            </svg>
+        </button>
+
+        <aside id="default-sidebar"
+            class="fixed top-0 left-0 z-40 w-64 h-full transition-transform -translate-x-full sm:translate-x-0"
+            aria-label="Sidebar">
+            <div class="h-full px-3 py-4 overflow-y-auto bg-neutral-primary-soft border-e border-default">
+                <ul class="space-y-2 font-medium">
+                    <li>
+                        <a href="#"
+                            class="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+                            <svg class="w-5 h-5 transition duration-75 group-hover:text-fg-brand" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M10 6.025A7.5 7.5 0 1 0 17.975 14H10V6.025Z" />
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M13.5 3c-.169 0-.334.014-.5.025V11h7.975c.011-.166.025-.331.025-.5A7.5 7.5 0 0 0 13.5 3Z" />
+                            </svg>
+                            <span class="ms-3">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <button type="submit" class="w-32 bg-red-500 text-white py-2 rounded-lg hover:bg-red-600" id="logOutAdmin" >Log out</button>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </header>
+    
+    <div class="p-4 sm:ml-64">
+        <div class="p-4">
+            <div class="grid grid-cols-3 gap-4 mb-4 ">
+                <div class=" items-center justify-center h-full rounded-base bg-neutral-secondary-soft">
+                    <h1 class="text-4xl">Task manager</h1>
+                    <p>Overview of your current academic performance task</p>
+                </div>
+                <div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
+                </div>
+                <div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
+                    <a href="./createTask.html"><button type="submit" class="w-32 bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600" id="addTask">New
+                        task</button></a>
+                    
+                </div>
+            </div>
+
+            <div class="grid grid-cols-4 gap-4 mb-4">
+                <div class=" flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
+                    <div class="bg-white rounded-xl p-5 flex items-center justify-between shadow-sm w-full">
+                        <div>
+                            <p class="text-gray-500 text-sm font-medium">Total task</p>
+                            <h2 class="text-2xl font-bold text-gray-800 mt-1" id="totalTask">0</h2>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
+                    <div class="bg-white rounded-xl p-5 flex items-center justify-between shadow-sm w-full">
+                        <div>
+                            <p class="text-gray-500 text-sm font-medium">Complete</p>
+                            <h2 class="text-2xl font-bold text-gray-800 mt-1" id="completeTask">0</h2>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
+                    <div class="bg-white rounded-xl p-5 flex items-center justify-between shadow-sm w-full">
+                        <div>
+                            <p class="text-gray-500 text-sm font-medium">Pending</p>
+                            <h2 class="text-2xl font-bold text-gray-800 mt-1" id="pendingTask">0</h2>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
+                    <div class="bg-white rounded-xl p-5 flex items-center justify-between shadow-sm w-full">
+                        <div>
+                            <p class="text-gray-500 text-sm font-medium">In Progress </p>
+                            <h2 class="text-2xl font-bold text-gray-800 mt-1" id="progress">0</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Table of task -->
+            <div class="relative overflow-x-auto bg-neutral-primary-soft shadow-xs rounded-base border border-default">
+                <table class="w-full text-sm text-left rtl:text-right text-body">
+                    <thead class="text-sm text-body bg-neutral-secondary-medium border-b border-default-medium">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 font-medium">
+                                Task name
+                            </th>
+                            
+                            <th scope="col" class="px-12 py-3 font-medium">
+                                Assignee
+                            </th>
+                            <th scope="col" class="px-12 py-3 font-medium">
+                                Status    
+                            </th>
+                             <th scope="col" class="px-12 py-3 font-medium">
+                                Priority  
+                            </th>
+                             <th scope="col" class="px-12 py-3 font-medium">
+                                Due date  
+                            </th>
+                             <th scope="col" class="px-12 py-3 font-medium">
+                                Acctions 
+                            </th>
+                            <th scope="col" class="px-12 py-3 ">
+                                <span class="sr-only">Edit</span>
+                            </th>
+                        </tr>
+                    </thead>
+                     
+                    <tbody id="containerTaskAdmin">
+                        <!-- <tr class="bg-neutral-primary-soft border-b border-default hover:bg-neutral-secondary-medium">
+                            <th scope="row" class="px-6 py-3 font-medium text-heading whitespace-nowrap">
+                                name task
+                            </th>
+                            <td class="px-12 py-3">
+                                Assignee
+                            </td>
+                            <td class="px-12 py-3">
+                                status  
+                            </td>
+                             <td class="px-12 py-3">
+                                Priority  
+                            </td>
+                             <td class="px-12 py-3">
+                                Due date  
+                            </td>
+                            <td class="px-12 py-3 ">
+                                <a href="#" class="font-medium text-fg-brand hover:underline">🖋</a>
+                                <a href="#" class="font-medium text-fg-brand hover:underline">🗑️</a>
+                            </td>
+                        </tr> -->
+                        
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    </div>
+    </div>
+    </div>
+    <script type="module" src="../js/main.js"></script>
+</body>
+
+</html>
